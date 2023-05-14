@@ -1,0 +1,142 @@
+Grid System :
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+<h1>Hello World !!!</h1>
+<p>Resize browser window to see the effect</p>
+<p>The columns will automatically stack on top of each other when the screen is less than 768 px wide</p>
+<div class="row">
+<div class="col-sm-4" style="background-color: red;">(col-sm-4-1)</div>
+<div class="col-sm-4" style="background-color: blue;">(col-sm-4-2)</div>
+<div class="col-sm-4" style="background-color: green;">(col-sm-4-3)</div>
+</div>
+</div>
+</body>
+</html>
+
+write hello world program using html css and media query:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello, World!</title>
+  <style>
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+    /* Media Query for screens smaller than 600px */
+    @media (max-width: 600px) {
+      .container {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, World!</h1>
+  </div>
+</body>
+</html>
+
+
+react ka hello world:
+import React from "react";
+import ReactDOM from "react-dom";
+
+function App() {
+  return (
+    <div>
+      <h1>Hello, World!</h1>
+    </div>
+  );
+}
+
+export default App; // Add this line to export the App component
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+useState :
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+
+function FavCity() {
+  const [city, setCity] = useState({
+    continent: "Europe",
+    country: "France",
+    city: "Paris"
+  });
+
+  const updateCity = () => {
+    setCity((previousState) => {
+      return { ...previousState, city: "Cannes" };
+    });
+  };
+
+  return (
+    <>
+      <h1>{city.continent}</h1>
+      <p>
+        Favorite City: {city.city} in Favorite Country: {city.country}
+      </p>
+      <button type="button" onClick={updateCity}>
+        Cannes
+      </button>
+    </>
+  );
+}
+
+ReactDOM.render(<FavCity />, document.getElementById("root"));
+export default FavCity;
+
+
+use Ref.:
+import React, { useState, useEffect, useRef } from "react";
+import ReactDOM from "react-dom";
+
+function App() {
+  const [inputValue, setInputValue] = useState("");
+  const count = useRef(0);
+
+  useEffect(() => {
+    count.current = count.current + 1;
+  }, []);
+
+  return (
+    <>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => {
+          setInputValue(e.target.value);
+        }}
+      />
+      <h1>Render Count: {count.current}</h1>
+    </>
+  );
+}
+
+const root = document.getElementById("root");
+ReactDOM.render(<App />, root);
+export default App;
+
+
+
+
+ref:
+https://codesandbox.io/s/usestate-gxrcbk
+https://codesandbox.io/s/useref-4wkfiz
+https://codesandbox.io/s/helloworldreact-vdpe9g
+https://codesandbox.io/s/csswithreact-kd63nl
+
